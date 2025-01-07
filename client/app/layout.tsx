@@ -1,6 +1,6 @@
 import '@/app/ui/global.css';
 import { Poppins } from 'next/font/google';
-
+import NavbarCustom from './components/navbar-custom';
 const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
@@ -15,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NavbarCustom />
+        {children}
+      </body>
     </html>
   );
 }
