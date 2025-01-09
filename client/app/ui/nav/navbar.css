@@ -1,0 +1,13 @@
+.navbar-custom {
+    color: white;
+    max-width: none;
+}
+.nav-text {
+    font-weight: 300;
+    color: white;
+    font-size: 16px;
+}
+.active_text {
+    color: white;
+    font-weight: 600;
+}
