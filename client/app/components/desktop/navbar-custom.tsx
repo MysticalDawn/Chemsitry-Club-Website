@@ -13,7 +13,6 @@ import { usePathname } from "next/navigation";
 export default function NavbarCustom() {
   const [isMobile, setMobile] = useState(false);
   const path_name = usePathname();
-  console.log(path_name === "/" ? "navbar-custom" : "nav-others")
 
   useEffect(() => {
     const handleResize = () => setMobile(window.innerWidth <= 768);
