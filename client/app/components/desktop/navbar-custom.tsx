@@ -3,68 +3,71 @@ import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../../public/chem_logo.png";
 import Image from "next/image";
-import Link from "next/link";
 import "@/app/ui/nav/navbar.css";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import NavbarCustomMobile from "../mobile/navbar-custom-mobile";
+import NavTab from "@/app/lib/nav/nav-tab";
+import Cursor from "@/app/lib/nav/cursor";
+import { usePathname } from "next/navigation";
 
 export default function NavbarCustom() {
-  const path_name = usePathname();
   const [isMobile, setMobile] = useState(false);
+  const path_name = usePathname();
 
   useEffect(() => {
     const handleResize = () => setMobile(window.innerWidth <= 768);
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  if (isMobile) {
-    return <NavbarCustomMobile />;
-  }
-
+  const [position, setPosition] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
+  console.log(path_name);
   return (
-    <Container className="navbar-custom m-0 p-2">
-      <header className="d-flex justify-between">
-        <div className="ml-10">
-          <Image src={logo} alt="logo" height={134.34} width={189.86} />
-        </div>
-        <nav className="d-flex align-items-center justify-content-center ml-5">
-          <Link
-            href="/"
-            className={`nav-text m-3 no-underline ${
-              path_name === "/" ? "active_text" : ""
-            }`}
-          >
-            Home
-          </Link>
-          <Link
-            href="/resources"
-            className={`nav-text m-3 no-underline ${
-              path_name === "/resources" ? "active_text" : ""
-            }`}
-          >
-            Resources
-          </Link>
-          <Link
-            href="/calendar"
-            className={`nav-text m-3 no-underline ${
-              path_name === "/calendar" ? "active_text" : ""
-            }`}
-          >
-            Calendar
-          </Link>
-          <Link
-            href="/about_us"
-            className={`nav-text m-3 no-underline ${
-              path_name === "/about_us" ? "active_text" : ""
-            }`}
-          >
-            About Us
-          </Link>
-        </nav>
-      </header>
-    </Container>
+    <>
+      {isMobile ? (
+        <NavbarCustomMobile />
+      ) : (
+        <Container
+          className={`p-2 ${
+            path_name === "/" ? "navbar-custom" : "nav-others"
+          }`}
+        >
+          <header className="d-flex justify-around">
+            <div className="justify-start">
+              <Image src={logo} alt="logo" height={134.34} width={189.86} />
+            </div>
+            <nav
+              className="d-flex align-items-center position-relative"
+              onMouseLeave={() => {
+                setPosition((pv) => ({
+                  ...pv,
+                  opacity: 0,
+                }));
+              }}
+            >
+              <NavTab setPosition={setPosition} href="/">
+                Home
+              </NavTab>
+              <NavTab setPosition={setPosition} href="/resources">
+                Resources
+              </NavTab>
+              <NavTab setPosition={setPosition} href="/calendar">
+                Calendar
+              </NavTab>
+              <NavTab setPosition={setPosition} href="/about_us">
+                About Us
+              </NavTab>
+              <Cursor position={position} />
+            </nav>
+            <div></div>
+            <div></div>
+          </header>
+        </Container>
+      )}
+    </>
   );
 }

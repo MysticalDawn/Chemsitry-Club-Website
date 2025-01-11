@@ -1,13 +1,9 @@
+.nav-others {
+  color: black;
+}
 .navbar-custom {
-    color: white;
-    max-width: none;
-}
-.nav-text {
-    font-weight: 300;
-    color: white;
-    font-size: 16px;
-}
-.active_text {
-    color: white;
-    font-weight: 600;
+  color: white;
+  max-width: none;
+  -webkit-backdrop-filter: bluer(10px);
+  backdrop-filter: blur(10px);
 }
