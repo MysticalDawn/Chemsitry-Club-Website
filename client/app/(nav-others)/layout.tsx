@@ -15,11 +15,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <body>
-        <NavbarCustom/>
+        <nav className="w-100">
+          <NavbarCustom />
+        </nav>
         {children}
       </body>
     </html>

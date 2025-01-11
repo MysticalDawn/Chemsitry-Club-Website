@@ -13,6 +13,7 @@ import { usePathname } from "next/navigation";
 export default function NavbarCustom() {
   const [isMobile, setMobile] = useState(false);
   const path_name = usePathname();
+  console.log(path_name === "/" ? "navbar-custom" : "nav-others")
 
   useEffect(() => {
     const handleResize = () => setMobile(window.innerWidth <= 768);
@@ -25,18 +26,17 @@ export default function NavbarCustom() {
     width: 0,
     opacity: 0,
   });
-  console.log(path_name);
   return (
     <>
       {isMobile ? (
         <NavbarCustomMobile />
       ) : (
         <Container
-          className={`p-2 ${
+          className={`p-2 m-0 ${
             path_name === "/" ? "navbar-custom" : "nav-others"
           }`}
         >
-          <header className="d-flex justify-around">
+          <header className="d-flex justify-around w-100">
             <div className="justify-start">
               <Image src={logo} alt="logo" height={134.34} width={189.86} />
             </div>

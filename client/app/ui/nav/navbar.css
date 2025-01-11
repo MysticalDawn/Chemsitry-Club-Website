@@ -1,5 +1,6 @@
 .nav-others {
-  color: black;
+  color: white;
+  max-width: none;
 }
 .navbar-custom {
   color: white;
