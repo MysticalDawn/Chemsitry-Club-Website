@@ -8,6 +8,8 @@ import path_vector_right from "../../../public/home/path-right.svg";
 import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import gsap from "gsap";
+import kfupm from '../../../public/home/kfupm.jpeg';
+
 export default function Home() {
   const [isMobile, setMobile] = useState(false);
   const h1Ref = useRef<HTMLHeadingElement>(null);
@@ -38,7 +40,18 @@ export default function Home() {
       {isMobile ? (
         <HomeMobile />
       ) : (
-        <div className="bg-img">
+        <div
+          className="main-nav po"
+          style={{
+            backgroundImage: `url(${kfupm.src})`,
+            minHeight: '100%',
+            minWidth: '100%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            marginRight: '1rem'
+          }}
+        >
           <nav className="position-fixed w-100 z-10">
             <NavbarCustom />
           </nav>
