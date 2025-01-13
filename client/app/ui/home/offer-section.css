@@ -1,0 +1,27 @@
+.offer-container {
+  background: rgb(234, 109, 2) !important;
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(234, 109, 2, 1) 0%,
+    rgba(245, 92, 2, 1) 50%,
+    rgba(243, 80, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(234, 109, 2, 1) 0%,
+    rgba(245, 92, 2, 1) 50%,
+    rgba(243, 80, 0, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(234, 109, 2, 1) 0%,
+    rgba(245, 92, 2, 1) 50%,
+    rgba(243, 80, 0, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea6d02",endColorstr="#f35000",GradientType=1) !important;
+  min-width: 100%;
+}
+
+.bg-img-vector {
+  left: -19.28rem;
+}
