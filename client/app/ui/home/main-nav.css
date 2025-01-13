@@ -6,5 +6,39 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin-right: 1rem;
-  position: relative;
+}
+
+.left-section-vector {
+  left: -5rem;
+}
+/* 
+.right-section-vector {
+  left: 5rem;
+} */
+.btn-1,
+.btn-2 {
+  transition: padding-right 0.5s, padding-left 0.5s; /* Add transition for padding */
+}
+
+.btn-1::after,
+.btn-2::after {
+  content: "→";
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  transition: opacity 0.5s, right 0.5s;
+  font-size: 1.8rem; /* Increase the font size */
+}
+
+.btn-1:hover,
+.btn-2:hover {
+  padding-right: 3rem !important; 
+}
+
+.btn-1:hover::after,
+.btn-2:hover::after {
+  opacity: 1;
+  right: 10px;
 }
