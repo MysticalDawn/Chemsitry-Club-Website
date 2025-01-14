@@ -4,6 +4,7 @@ import Home from "./first-part/main-nav";
 import HomeMobile from "./first-part/main-nav-mobile";
 import OfferSection from "./second-part/offer-section";
 import OfferSectionMobile from "./second-part/offer-section-mobile";
+import { Container } from "react-bootstrap";
 
 export default function Page() {
   const [isMobile, setIsMobile] = useState(false);
@@ -22,9 +23,9 @@ export default function Page() {
   }, []);
 
   return (
-    <>
+    <Container className="m-0 p-0 w-100 h-100 min-vw-100">
       {isMobile ? <HomeMobile /> : <Home />}
       {isMobile ? <OfferSectionMobile /> : <OfferSection />}
-    </>
+    </Container>
   );
 }

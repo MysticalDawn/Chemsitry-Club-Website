@@ -19,9 +19,15 @@
     rgba(243, 80, 0, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea6d02",endColorstr="#f35000",GradientType=1) !important;
-  min-width: 100%;
 }
 
-.bg-img-vector {
-  left: -19.28rem;
+.card-1, .card-2, .card-3 {
+  border: solid;
+  border-radius: 16px;
+  background-color: #FFDBBB;
+  border-color: transparent;
+  margin: 1rem;
+  padding: 1.5rem;
+  -webkit-backdrop-filter: bluer(10px);
+  backdrop-filter: blur(10px);
 }

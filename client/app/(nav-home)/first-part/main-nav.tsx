@@ -65,8 +65,14 @@ export default function Home() {
         <NavbarCustom />
       </nav>
       <main className="main-section">
-        <section className="left-section-vector flex justify-start w-fit position-relative z-0">
-          <Image src={path_vector_left} alt={"path_vector"} />
+        <section className="left-section-vector flex justify-start w-75 position-relative z-0">
+          <Image
+            src={path_vector_left}
+            alt={"path_vector"}
+            width={1371.49}
+            height={503.44}
+            priority
+          />
         </section>
         <section className="middle-section flex-col justify-center align-middle">
           <h1
@@ -101,7 +107,14 @@ export default function Home() {
           </div>
         </section>
         <section className="right-section-vector flex justify-end z-0 w-100 position-relative">
-          <Image src={path_vector_right} alt={"path_vector"} />
+          <Image
+          className="w-75"
+            src={path_vector_right}
+            alt={"path_vector"}
+            width={1371.49}
+            height={503.44}
+            priority
+          />
         </section>
       </main>
     </div>

@@ -37,7 +37,7 @@ export default function NavbarCustom() {
         >
           <header className="d-flex justify-around w-100">
             <div className="justify-start">
-              <Image src={logo} alt="logo" height={134.34} width={189.86} />
+              <Image src={logo} alt="logo" height={134.34} width={189.86} priority />
             </div>
             <nav
               className="d-flex align-items-center position-relative"
