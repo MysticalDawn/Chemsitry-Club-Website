@@ -69,9 +69,9 @@ export default function Home() {
           <Image
             src={path_vector_left}
             alt={"path_vector"}
-            width={1371.49}
-            height={503.44}
-            priority
+            width={571.49}
+            height={403.44}
+            loading="lazy"
           />
         </section>
         <section className="middle-section flex-col justify-center align-middle">
@@ -108,12 +108,12 @@ export default function Home() {
         </section>
         <section className="right-section-vector flex justify-end z-0 w-100 position-relative">
           <Image
-          className="w-75"
+            className="w-50"
             src={path_vector_right}
             alt={"path_vector"}
-            width={1371.49}
-            height={503.44}
-            priority
+            width={271.49}
+            height={103.44}
+            loading="lazy"
           />
         </section>
       </main>

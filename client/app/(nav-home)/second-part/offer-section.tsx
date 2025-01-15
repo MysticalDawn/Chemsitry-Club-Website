@@ -1,3 +1,4 @@
+"use client";
 import { Container } from "react-bootstrap";
 import "../../ui/home/offer-section.css";
 import offerVector from "../../../public/home/offer-vector.svg";
@@ -5,14 +6,31 @@ import Image from "next/image";
 import calender_svg from "../../../public/home/calendar.svg";
 import fireworks_svg from "../../../public/home/fireworks.svg";
 import learning_svg from "../../../public/home/learning.svg";
+import { useEffect, useRef } from "react";
+
 export default function OfferSection() {
+  useEffect(() => {
+    const intersectionCallback: IntersectionObserverCallback = (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      }
+    };
+
+    const observer = new IntersectionObserver(intersectionCallback);
+    const items = document.querySelectorAll(".items");
+    items.forEach((item) => observer.observe(item));
+
+    return () => {
+      items.forEach((item) => observer.unobserve(item));
+    };
+  }, []);
+
   return (
     <Container className="m-0 p-5 h-100 min-vw-100 offer-container flex-col justify-center align-content-center align-items-center">
-      {/* <div className="w-75 z-10 flex-col justify-start position-relative opacity-25 offer-vector">
-        <Image src={offerVector} alt="Offer vector" loading="lazy" height={535.55} width={1459} />
-      </div> */}
       <main className="flex">
-        <section className="z-10 flex-col align-content-center align-items-center w-100">
+        <section className="z-10 flex-col align-content-center align-items-center w-75 items">
           <p className="text-white font-light text-base m-0">-Our Services</p>
           <h2 className="text-black font-bold text-5xl overflow-y-hidden">
             What We Offer
@@ -23,70 +41,74 @@ export default function OfferSection() {
             professional journey.
           </p>
         </section>
-        <section className="offer-cards flex-col justify-start align-content-center align-items-center w-100">
-          <div className="card-1 flex w-100 align-content-center align-items-center">
-            <div
-              className="rounded-full border p-3"
-              style={{ borderColor: "#F35000", backgroundColor: "#F35000" }}
-            >
-              <Image
-                src={calender_svg}
-                alt="calendar"
-                width={40.54}
-                height={40.5}
-              />
-            </div>
-            <div className="flex-col ml-5">
-              <h3 className="text-white text-2xl font-bold m-0">
-                Calendar & Upcoming Events
-              </h3>
-              <p className="text-black font-light text-base m-0">
-                Check our calendar for upcoming events and important dates.
-              </p>
-            </div>
-          </div>
-          <div className="card-2 flex w-100 align-content-center align-items-center">
-            <div
-              className="rounded-full border p-3"
-              style={{ borderColor: "#F35000", backgroundColor: "#F35000" }}
-            >
-              <Image
-                src={fireworks_svg}
-                alt="calendar"
-                width={40.54}
-                height={37.5}
-                className="rounded-full"
-              />
-            </div>
-            <div className="flex-col ml-5">
-              <h3 className="text-white text-2xl font-bold m-0">
-                Calendar & Upcoming Events
-              </h3>
-              <p className="text-black font-light text-base m-0">
-                Check our calendar for upcoming events and important dates.
-              </p>
+        <section className="offer-cards flex-col justify-start align-content-center align-items-center w-100 items">
+          <div className="card-1 position-relative z-0">
+            <div className="flex w-100 align-content-center align-items-center z-10">
+              <div
+                className="rounded-full border p-3"
+                style={{ borderColor: "#F35000", backgroundColor: "#F35000" }}
+              >
+                <Image
+                  src={calender_svg}
+                  alt="calendar"
+                  width={40.54}
+                  height={40.5}
+                />
+              </div>
+              <div className="flex-col ml-5">
+                <h3 className="text-white text-2xl font-bold m-0 overflow-y-hidden">
+                  Calendar & Upcoming Events
+                </h3>
+                <p className="text-black font-light text-base m-0">
+                  Check our calendar for upcoming events and important dates.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="card-3 flex w-100 align-content-center align-items-center">
-            <div
-              className="rounded-full border p-3"
-              style={{ borderColor: "#F35000", backgroundColor: "#F35000" }}
-            >
-              <Image
-                src={learning_svg}
-                alt="calendar"
-                width={40.54}
-                height={37.5}
-                className="rounded-full"
-              />
+          <div className="card-2">
+            <div className="flex w-100 align-content-center align-items-center">
+              <div
+                className="rounded-full border p-3"
+                style={{ borderColor: "#F35000", backgroundColor: "#F35000" }}
+              >
+                <Image
+                  src={fireworks_svg}
+                  alt="calendar"
+                  width={40.54}
+                  height={37.5}
+                />
+              </div>
+              <div className="flex-col ml-5">
+                <h3 className="text-white text-2xl font-bold m-0 overflow-y-hidden">
+                  Calendar & Upcoming Events
+                </h3>
+                <p className="text-black font-light text-base m-0">
+                  Check our calendar for upcoming events and important dates.
+                </p>
+              </div>
             </div>
-            <div className="flex-col ml-5">
-              <h3 className="text-white text-2xl font-bold m-0">
-                Calendar & Upcoming Events
-              </h3>
-              <p className="text-black font-light text-base m-0">
-                Check our calendar for upcoming events and important dates.
-              </p>
+          </div>
+          <div className="card-3">
+            <div className="flex w-100 align-content-center align-items-center">
+              <div
+                className="rounded-full border p-3"
+                style={{ borderColor: "#F35000", backgroundColor: "#F35000" }}
+              >
+                <Image
+                  src={learning_svg}
+                  alt="calendar"
+                  width={40.54}
+                  height={37.5}
+                />
+              </div>
+              <div className="flex-col ml-5">
+                <h3 className="text-white text-2xl font-bold m-0 overflow-y-hidden">
+                  Calendar & Upcoming Events
+                </h3>
+                <p className="text-black font-light text-base m-0">
+                  Check our calendar for upcoming events and important dates.
+                </p>
+              </div>
             </div>
           </div>
         </section>
