@@ -20,8 +20,8 @@ export default function EventsCard() {
     }
   };
   return (
-    <Container className="m-0 p-5 h-100 min-vw-100 event-container flex-col justify-center align-content-center align-items-center bg-white">
-      <section className="flex-col align-content-center align-items-center w-50">
+    <Container className="p-0 h-100 min-vw-100 event-container flex align-content-center align-items-center bg-white">
+      <section className="flex-col align-content-center align-items-center w-50 pl-5 ml-5">
         <p className="font-light text-base m-0 latest-event-text">
           -latest events
         </p>
@@ -46,7 +46,9 @@ export default function EventsCard() {
           </Button>
         </div>
       </section>
-      <section className=""></section>
+      <section className="flex justify-end h-100 w-100 pt-5 pb-5">
+        <div className="colored-card w-75 h-100"></div>
+      </section>
     </Container>
   );
 }

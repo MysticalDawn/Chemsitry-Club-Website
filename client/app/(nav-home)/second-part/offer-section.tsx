@@ -27,9 +27,9 @@ export default function OfferSection() {
   }, []);
 
   return (
-    <Container className="m-0 p-5 h-100 min-vw-100 offer-container flex-col justify-center align-content-center align-items-center">
-      <main className="flex">
-        <section className="z-10 flex-col align-content-center align-items-center w-75 items">
+    <Container className="m-0 p-5 min-vw-100 offer-container">
+      <main className="flex align-content-center align-items-center">
+        <section className="left-section z-10 flex-col align-content-center align-items-center w-75 items">
           <p className="text-white font-light text-base m-0">-Our Services</p>
           <h2 className="text-black font-bold text-5xl overflow-y-hidden">
             What We Offer

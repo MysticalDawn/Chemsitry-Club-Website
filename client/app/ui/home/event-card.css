@@ -27,3 +27,7 @@
   outline: none;
   box-shadow: none;
 }
+
+.colored-card {
+  background-color: #f35000;
+}
