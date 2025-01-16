@@ -1,12 +1,11 @@
 "use client";
 import { Container } from "react-bootstrap";
 import "../../ui/home/offer-section.css";
-import offerVector from "../../../public/home/offer-vector.svg";
 import Image from "next/image";
 import calender_svg from "../../../public/home/calendar.svg";
 import fireworks_svg from "../../../public/home/fireworks.svg";
 import learning_svg from "../../../public/home/learning.svg";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function OfferSection() {
   useEffect(() => {
@@ -42,7 +41,7 @@ export default function OfferSection() {
           </p>
         </section>
         <section className="offer-cards flex-col justify-start align-content-center align-items-center w-100 items">
-          <div className="card-1 position-relative z-0">
+          <div className="card-1 mb-4">
             <div className="flex w-100 align-content-center align-items-center z-10">
               <div
                 className="rounded-full border p-3"
@@ -65,7 +64,7 @@ export default function OfferSection() {
               </div>
             </div>
           </div>
-          <div className="card-2">
+          <div className="card-2 mb-4">
             <div className="flex w-100 align-content-center align-items-center">
               <div
                 className="rounded-full border p-3"
@@ -80,15 +79,16 @@ export default function OfferSection() {
               </div>
               <div className="flex-col ml-5">
                 <h3 className="text-white text-2xl font-bold m-0 overflow-y-hidden">
-                  Calendar & Upcoming Events
+                  Latest Events & Announcements
                 </h3>
                 <p className="text-black font-light text-base m-0">
-                  Check our calendar for upcoming events and important dates.
+                  Stay updated with the latest events and important
+                  announcements.
                 </p>
               </div>
             </div>
           </div>
-          <div className="card-3">
+          <div className="card-3 ">
             <div className="flex w-100 align-content-center align-items-center">
               <div
                 className="rounded-full border p-3"
@@ -103,10 +103,10 @@ export default function OfferSection() {
               </div>
               <div className="flex-col ml-5">
                 <h3 className="text-white text-2xl font-bold m-0 overflow-y-hidden">
-                  Calendar & Upcoming Events
+                  Comprehensive Resources
                 </h3>
                 <p className="text-black font-light text-base m-0">
-                  Check our calendar for upcoming events and important dates.
+                  Access courses, flowcharts, and extra study materials.{" "}
                 </p>
               </div>
             </div>

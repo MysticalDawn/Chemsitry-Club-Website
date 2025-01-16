@@ -1,0 +1,29 @@
+.latest-event-text {
+  color: #f35000;
+}
+
+.back-arrow-btn {
+  border: 1.5px solid black;
+  border-radius: 100%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  transition: scale 1s;
+  border-left-color: #f35000;
+  width: 59px;
+  height: 59px;
+  outline: none;
+  box-shadow: none;
+}
+
+.next-arrow-btn {
+  border: solid;
+  border-radius: 1000px;
+  background-color: #f35000;
+  color: white;
+  border-color: transparent;
+  width: 59px;
+  height: 59px;
+  outline: none;
+  box-shadow: none;
+}

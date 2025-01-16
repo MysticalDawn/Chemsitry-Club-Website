@@ -2,7 +2,7 @@ import "@/app/ui/global.css";
 import { Poppins } from "next/font/google";
 import NavbarCustom from "../components/desktop/navbar-custom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import kfupm from "../../public/home/kfupm.jpeg";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -18,7 +18,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <body>
-        {children}
+        <div
+          className="main-nav po"
+          style={{
+            backgroundImage: `url(${kfupm.src})`,
+            height: "100vh",
+            width: "100vw",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            marginRight: "1rem",
+          }}
+        >
+          {children}
+        </div>
       </body>
     </html>
   );
