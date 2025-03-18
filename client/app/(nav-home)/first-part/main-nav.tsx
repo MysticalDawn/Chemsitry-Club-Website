@@ -1,32 +1,16 @@
 "use client";
 import "../../ui/home/main-nav.css";
 import NavbarCustom from "../../components/desktop/navbar-custom";
-import HomeMobile from "./main-nav-mobile";
 import React, { useEffect, useRef, useState } from "react";
 import path_vector_left from "../../../public/home/path-left.svg";
 import path_vector_right from "../../../public/home/path-right.svg";
 import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import gsap from "gsap";
-import kfupm from "../../../public/home/kfupm.jpeg";
 import { redirect } from "next/navigation";
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
   const h1Ref = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize(); // Check screen size on initial load
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   useEffect(() => {
     if (h1Ref.current) {
@@ -44,24 +28,9 @@ export default function Home() {
 
   const handleViewEventsClick = () => {};
 
-  if (isMobile) {
-    return <HomeMobile />;
-  }
-
   return (
-    <div
-      className="main-nav po"
-      style={{
-        backgroundImage: `url(${kfupm.src})`,
-        minHeight: "100%",
-        minWidth: "100%",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        marginRight: "1rem",
-      }}
-    >
-      <nav className="position-fixed w-100 z-10">
+    <>
+      <nav className="w-100 z-10">
         <NavbarCustom />
       </nav>
       <main className="main-section">
@@ -117,6 +86,6 @@ export default function Home() {
           />
         </section>
       </main>
-    </div>
+    </>
   );
 }

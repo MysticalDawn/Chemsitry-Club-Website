@@ -7,11 +7,12 @@
     rgba(243, 80, 0, 1) 100%
   );
   cursor: default;
+  flex-wrap: wrap;
 }
 
 .items {
   opacity: 0;
-  transition: opacity 1.5s ease-out;
+  transition: opacity 1.5s ease;
 }
 
 .items.show {
