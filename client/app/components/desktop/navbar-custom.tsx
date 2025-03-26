@@ -46,7 +46,7 @@ export default function NavbarCustom() {
               />
             </div>
             <nav
-              className="d-flex align-items-center position-relative"
+              className="d-flex align-items-center position-relative isolate"
               onMouseLeave={() => {
                 setPosition((pv) => ({
                   ...pv,
