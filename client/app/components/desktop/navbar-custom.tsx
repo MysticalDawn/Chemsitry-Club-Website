@@ -68,8 +68,6 @@ export default function NavbarCustom() {
               </NavTab>
               <Cursor position={position} />
             </nav>
-            <div></div>
-            <div></div>
           </header>
         </Container>
       )}

@@ -1,5 +1,5 @@
 .nav-others {
-  max-width: none;
+  min-width: 100vw;
   background-color: #F36600;
   color: white !important;
 }
