@@ -1,3 +1,14 @@
+.event-container {
+}
+
+.event-card {
+  border: solid;
+  border-radius: 0.8rem;
+  border-width: 0.15rem;
+  border-color: #f35000;
+  margin: 3rem;
+}
+
 .latest-event-text {
   color: #f35000;
 }
@@ -30,4 +41,48 @@
 
 .colored-card {
   background-color: #f35000;
+}
+
+.vector-event {
+  scale: 1;
+}
+
+.arc-footer {
+  overflow: hidden;
+  background-color: #f35000;
+}
+
+.rounded-barcode {
+  border-radius: 12px; /* Adjust the value for more or less rounding */
+  border: 2px solid #f35000; /* Optional: Add a border with a specific color */
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slide in from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0); /* Start at original position */
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide out upwards */
+  }
 }

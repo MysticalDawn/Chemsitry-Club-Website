@@ -18,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <body>
-        <nav className="w-100">
           <NavbarCustom />
-        </nav>
         {children}
       </body>
     </html>

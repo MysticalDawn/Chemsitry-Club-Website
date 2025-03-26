@@ -1,6 +1,7 @@
 .nav-others {
-  color: white;
   max-width: none;
+  background-color: #F36600;
+  color: white !important;
 }
 .navbar-custom {
   color: white;
