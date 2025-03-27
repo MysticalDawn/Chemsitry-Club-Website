@@ -1,0 +1,26 @@
+/* calendar.module.css */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+  }
+  
+  .button {
+    background-color: #ff6a00;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #e65a00;
+  }
+  
+  .shadow-box {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  

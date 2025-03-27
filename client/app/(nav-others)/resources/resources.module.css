@@ -1,0 +1,157 @@
+.container {
+    padding: 2rem 1rem;
+  }
+  
+  /* ---------- Tabs ---------- */
+  .tabLinks {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 34rem;
+    height: 4.1875rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tabLink {
+    flex: 1;
+    height: 100%;
+    background: #fff;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.25rem;
+    color: #b4b4b4;
+    text-align: center;
+    padding: 0.625rem;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .tabLink.selected {
+    border-top: 3px solid #f35000;
+    color: #f35000;
+  }
+  .tabContentFade {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ---------- Flowchart ---------- */
+  .flowchartImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .flowchartImage {
+    max-width: 100%;
+    height: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .flowchartSection {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    background: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .flowchartTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+    overflow: hidden;
+  }
+  
+  
+  /* ---------- Cards ---------- */
+  .cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 24.375rem;
+    height: 15.34475rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(246, 140, 27, 0.2);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
+  .cardIcon {
+    margin-bottom: 0.5rem;
+  }
+  
+  .cardTitle {
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 116.295%;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  
+  .cardButton {
+    padding: 0.625rem 1.25rem;
+    border-radius: 3.9375rem;
+    background: #f9aa39;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cardButton:hover {
+    background: #f8b84f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* ---------- Coming Soon ---------- */
+  .comingSoon {
+    text-align: center;
+  
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #888;
+    margin-top: 2rem;
+  }
+  
