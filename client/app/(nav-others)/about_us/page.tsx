@@ -9,6 +9,7 @@ import MissionSection from "./third-part/mission-section";
 import MissionSectionMobile from "./third-part/mission-section-mobile";
 import OrgChart from "./fourth-part/org-chart";
 import MemberCards from "./fourth-part/member-cards";
+import Footer from "@/app/components/desktop/footer";
 
 export default function AboutUs() {
   const [isMobile, setIsMobile] = useState(false);
@@ -33,6 +34,7 @@ export default function AboutUs() {
       {isMobile ? <MissionSectionMobile /> : <MissionSection />}
       <OrgChart />
       <MemberCards />
+      <Footer />
     </div>
   );
 }
