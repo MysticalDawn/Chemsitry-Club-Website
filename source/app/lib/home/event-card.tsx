@@ -83,12 +83,13 @@ export default function EventCard({
                 alt="location"
                 height={21}
                 width={21}
-                className="mr-2"
+                className="mb-2 event-card-vector"
               />
               <span className="text-white">{location}</span>
             </div>
           </div>
-          <div className="right-section p-4 m-2">
+          <div className="right-section p-2 m-2">
+            <p className="text-white font-bold reg-text m-0">REGISTRATION</p>
             {qrCode && (
               <Image
                 src={qrCode}

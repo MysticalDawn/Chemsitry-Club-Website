@@ -1,10 +1,7 @@
-.event-container {
-}
-
 .event-card {
   border: solid;
   border-radius: 0.8rem;
-  border-width: 0.15rem;
+  border-width: 0.11rem;
   border-color: #f35000;
   margin: 3rem;
 }
@@ -41,10 +38,6 @@
 
 .colored-card {
   background-color: #f35000;
-}
-
-.vector-event {
-  scale: 1;
 }
 
 .arc-footer {
@@ -85,4 +78,17 @@
     opacity: 0;
     transform: translateY(-20px); /* Slide out upwards */
   }
+}
+
+.right-section {
+  background-color: #fe5b09;
+  border: solid;
+  border-radius: 5rem; 
+  border-color: transparent;
+  border-width: 0.10rem;
+}
+
+.reg-text {
+  writing-mode: sideways-lr;
+  font-size: 10px;
 }
