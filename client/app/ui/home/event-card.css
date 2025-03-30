@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@600&display=swap");
 .event-card {
   border: solid;
   border-radius: 0.8rem;
@@ -5,6 +6,12 @@
   border-color: #f35000;
   margin: 3rem;
   box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.6); /* Shadow on the left */
+  transition: transform 0.8s ease, box-shadow 0.8s ease; /* Smooth transition for scaling and shadow */
+}
+
+.event-card:hover {
+  transform: scale(1.01); /* Slightly expand the card */
+  box-shadow: -12px 12px 12px rgba(0, 0, 0, 0.7); /* Enhance the shadow on hover */
 }
 
 .latest-event-text {
@@ -39,6 +46,10 @@
 
 .colored-card {
   background-color: #f35000;
+}
+
+.title-card {
+  font-size: 26px;
 }
 
 .arc-footer {
@@ -84,4 +95,8 @@
 .reg-text {
   writing-mode: sideways-lr;
   font-size: 10px;
+}
+
+.support-text {
+  font-family: "Noto Sans Arabic";
 }

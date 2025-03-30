@@ -10,54 +10,50 @@ import EventCard from "@/app/lib/home/event-card";
 
 export default function Events() {
   const [eventCounter, setEventCounter] = useState(1);
-  const [eventData, setEventData] = useState({
-    title: "Loading title...",
-    date: "Loading date...",
-    time: "Loading time...",
-    location: "Loading location...",
-    barcode: "Loading barcode...",
-  });
+  interface Event {
+    title: string;
+    date: string;
+    time: string;
+    location: string;
+    barcode: string;
+  }
+
+  const [events, setEvents] = useState<Event[]>([]);
   const [animationClass, setAnimationClass] = useState("");
 
-  // Function to fetch event data from the server
-  const fetchEventData = async (eventId: number) => {
-    try {
-      const response = await fetch(
-        `http://localhost:3001/get_event?id=${eventId}`
-      );
-      if (!response.ok) {
-        throw new Error("Failed to fetch event data");
-      }
-      const { data } = await response.json();
-      console.log(data);
-      setEventData({
-        title: data.title,
-        date: data.date,
-        time: data.time,
-        location: data.location,
-        barcode: data.barcode,
-      });
-      console.log(location);
-    } catch (error) {
-      console.error("Error fetching event data:", error);
-    }
-  };
-
-  // Fetch event data whenever the eventCounter changes
   useEffect(() => {
-    setAnimationClass("fade-out"); // Trigger fade-out animation
-    const timeout = setTimeout(() => {
-      fetchEventData(eventCounter);
-      setAnimationClass("fade-in"); // Trigger fade-in animation
-    }, 300); // Match the duration of the fade-out animation
+    const fetchEventData = async () => {
+      try {
+        const response = await fetch(`http://localhost:3001/get_events`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch event data");
+        }
+        const { data } = await response.json();
+        setEvents(data); // Store the fetched events in state
+      } catch (error) {
+        console.error("Error fetching event data:", error);
+      }
+    };
 
-    return () => clearTimeout(timeout); // Cleanup timeout
-  }, [eventCounter]);
+    fetchEventData();
+  }, []); // Empty dependency array ensures this runs only once
+
+  // Update the animation and event data when the eventCounter changes
+  useEffect(() => {
+    if (events.length > 0) {
+      setAnimationClass("fade-out"); // Trigger fade-out animation
+      const timeout = setTimeout(() => {
+        setAnimationClass("fade-in"); // Trigger fade-in animation
+      }, 300); // Match the duration of the fade-out animation
+
+      return () => clearTimeout(timeout); // Cleanup timeout
+    }
+  }, [eventCounter, events]);
 
   const increment = (flag: boolean) => {
     if (eventCounter === 1 && !flag) {
       setEventCounter(1);
-    } else if (eventCounter === 10 && flag) {
+    } else if (eventCounter === events.length && flag) {
       setEventCounter(1);
     } else if (flag) {
       setEventCounter(eventCounter + 1);
@@ -76,7 +72,7 @@ export default function Events() {
           Here are some of our latest events
         </h2>
         <p className="text-black font-light text-base m-0 w-100">
-          {eventCounter}/10
+          {eventCounter}/{events.length || 0}
         </p>
         <div className="arrow-btns flex align-items-center align-content-center justify-start">
           <Button
@@ -95,11 +91,11 @@ export default function Events() {
       </section>
       <div className={`h-100 w-50 ${animationClass}`}>
         <EventCard
-          title={eventData.title}
-          date={eventData.date}
-          time={eventData.time}
-          location={eventData.location}
-          barcode={eventData.barcode}
+          title={events[eventCounter - 1]?.title || ""}
+          date={events[eventCounter - 1]?.date || ""}
+          time={events[eventCounter - 1]?.time || ""}
+          location={events[eventCounter - 1]?.location || ""}
+          barcode={events[eventCounter - 1]?.barcode || ""}
         />
       </div>
     </Container>

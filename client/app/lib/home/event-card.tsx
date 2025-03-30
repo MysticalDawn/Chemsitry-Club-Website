@@ -51,10 +51,10 @@ export default function EventCard({
         <Image src={kfupm_logo} height={250} width={150} alt="kfupm_logo" />
       </CardHeader>
       <CardBody className="overflow-visible p-0">
-        <h1 className="overflow-hidden text-center font-bold">{title}</h1>
+        <h1 className="overflow-hidden text-center font-bold title-card p-1">{title}</h1>
         <Image src={vector} height={300} width={800} alt="vector" />
       </CardBody>
-      <CardFooter className="flex mt-2 arc-footer">
+      <CardFooter className="flex-col mt-2 arc-footer">
         <div className="event-info flex align-content-center align-items-center justify-around w-100">
           <div className="left-section flex-col align-items-center align-content-center p-4">
             <div className="flex m-2">
@@ -103,6 +103,9 @@ export default function EventCard({
             )}
           </div>
         </div>
+        <p className="support-text text-center text-white text-base">
+          بدعم من صندوق الطالب
+        </p>
       </CardFooter>
     </Card>
   );
