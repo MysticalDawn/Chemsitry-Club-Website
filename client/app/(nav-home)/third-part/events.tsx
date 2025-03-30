@@ -11,22 +11,25 @@ import EventCard from "@/app/lib/home/event-card";
 export default function Events() {
   const [eventCounter, setEventCounter] = useState(1);
   const [eventData, setEventData] = useState({
-    title: "",
-    date: "",
-    time: "",
-    location: "",
-    barcode: "",
+    title: "Loading title...",
+    date: "Loading date...",
+    time: "Loading time...",
+    location: "Loading location...",
+    barcode: "Loading barcode...",
   });
   const [animationClass, setAnimationClass] = useState("");
 
   // Function to fetch event data from the server
   const fetchEventData = async (eventId: number) => {
     try {
-      const response = await fetch(`/api/events/${eventId}`);
+      const response = await fetch(
+        `http://localhost:3001/get_event?id=${eventId}`
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch event data");
       }
-      const data = await response.json();
+      const { data } = await response.json();
+      console.log(data);
       setEventData({
         title: data.title,
         date: data.date,
@@ -34,6 +37,7 @@ export default function Events() {
         location: data.location,
         barcode: data.barcode,
       });
+      console.log(location);
     } catch (error) {
       console.error("Error fetching event data:", error);
     }

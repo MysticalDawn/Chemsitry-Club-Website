@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import logo from "../../../public/chem_logo.png";
 import "../../ui/footer/footer.css";
 import Link from "next/link";
-import { SocialIcon } from 'react-social-icons';
+import { SocialIcon } from "react-social-icons";
 export default function Footer() {
   return (
     <main className="flex-col align-items-center align-content-center footer-container">
@@ -61,19 +61,19 @@ export default function Footer() {
           <p className="text-white font-light text-center mr-2">M. Aljassem</p>
         </div>
         <div className="flex justify-center space-x-4">
-        <SocialIcon
-          url="https://x.com"
-          bgColor="white"
-          fgColor="#1DA1F2" 
-          style={{ height: 40, width: 40 }} 
-        />
-        <SocialIcon
-          url="https://linkedin.com"
-          bgColor="white" 
-          fgColor="#0077B5"
-          style={{ height: 40, width: 40 }} 
-        />
-      </div>
+          <SocialIcon
+            url="https://x.com/chemc_kfupm"
+            bgColor="white"
+            fgColor="#1DA1F2"
+            style={{ height: 40, width: 40 }}
+          />
+          <SocialIcon
+            url="https://sa.linkedin.com/company/checkfupm"
+            bgColor="white"
+            fgColor="#0077B5"
+            style={{ height: 40, width: 40 }}
+          />
+        </div>
       </section>
     </main>
   );

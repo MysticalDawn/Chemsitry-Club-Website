@@ -4,6 +4,7 @@
   border-width: 0.11rem;
   border-color: #f35000;
   margin: 3rem;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.6); /* Shadow on the left */
 }
 
 .latest-event-text {
@@ -45,9 +46,9 @@
   background-color: #f35000;
 }
 
-.rounded-barcode {
-  border-radius: 12px; /* Adjust the value for more or less rounding */
-  border: 2px solid #f35000; /* Optional: Add a border with a specific color */
+.rounded-reg {
+  border-radius: 12px 0 0 0px; /* Rounded only on the left side */
+  border: 2px solid #f35000;
 }
 
 .fade-in {
@@ -78,14 +79,6 @@
     opacity: 0;
     transform: translateY(-20px); /* Slide out upwards */
   }
-}
-
-.right-section {
-  background-color: #fe5b09;
-  border: solid;
-  border-radius: 5rem; 
-  border-color: transparent;
-  border-width: 0.10rem;
 }
 
 .reg-text {

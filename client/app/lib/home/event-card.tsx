@@ -46,9 +46,9 @@ export default function EventCard({
 
   return (
     <Card className="event-card">
-      <CardHeader className="p-0 flex justify-between align-content-center">
+      <CardHeader className="p-0 flex justify-between items-start">
         <Image src={logo} height={200} width={200} alt="chem_logo" />
-        <Image src={kfupm_logo} height={200} width={250} alt="kfupm_logo" />
+        <Image src={kfupm_logo} height={250} width={150} alt="kfupm_logo" />
       </CardHeader>
       <CardBody className="overflow-visible p-0">
         <h1 className="overflow-hidden text-center font-bold">{title}</h1>
@@ -56,8 +56,8 @@ export default function EventCard({
       </CardBody>
       <CardFooter className="flex mt-2 arc-footer">
         <div className="event-info flex align-content-center align-items-center justify-around w-100">
-          <div className="left-section flex-col p-4">
-            <div className="flex items-center m-2">
+          <div className="left-section flex-col align-items-center align-content-center p-4">
+            <div className="flex m-2">
               <Image
                 src={calender}
                 alt="calender"
@@ -65,9 +65,9 @@ export default function EventCard({
                 width={21}
                 className="mr-2"
               />
-              <span className="text-white">{date}</span>
+              <span className="text-white text-center">{date}</span>
             </div>
-            <div className="flex items-center m-2">
+            <div className="flex m-2">
               <Image
                 src={time_svg}
                 alt="time"
@@ -77,26 +77,28 @@ export default function EventCard({
               />
               <span className="text-white">{time}</span>
             </div>
-            <div className="flex items-center m-2">
+            <div className="flex m-2">
               <Image
                 src={location_svg}
                 alt="location"
                 height={21}
                 width={21}
-                className="mb-2 event-card-vector"
+                className="mr-2 event-card-vector"
               />
-              <span className="text-white">{location}</span>
+              <span className="text-white text-center">{location}</span>
             </div>
           </div>
-          <div className="right-section p-2 m-2">
-            <p className="text-white font-bold reg-text m-0">REGISTRATION</p>
+          <div className="right-section p-2 m-2 flex">
+            <p className="text-white font-bold reg-text m-0 text-center rounded-reg ">
+              REGISTRATION
+            </p>
             {qrCode && (
               <Image
                 src={qrCode}
                 alt="QR Code"
                 height={100}
                 width={100}
-                className="rounded-barcode"
+                className="rounded"
               />
             )}
           </div>
