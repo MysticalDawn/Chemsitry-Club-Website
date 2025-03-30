@@ -28,13 +28,13 @@
   border-color: transparent;
   margin: 1rem;
   padding: 1.5rem;
-  -webkit-backdrop-filter: bluer(50px);
+  -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
+  transition: transform 1s ease; /* Smooth transition for scaling */
 }
 
 .card-1:hover,
 .card-2:hover,
 .card-3:hover {
-  transition: scale 1s;
-  scale: 1.02;
+  transform: scale(1.02); /* Slightly expand the card */
 }
