@@ -1,5 +1,6 @@
 import React from 'react';
 import background from '../../../public/resources/background.svg';
+import Footer from "@/app/components/desktop/footer";
 
 interface ResourcesLayoutProps {
   children: React.ReactNode;
@@ -16,7 +17,7 @@ const ResourcesLayout: React.FC<ResourcesLayoutProps> = ({ children }) => {
         {children}
       </main>
       <footer>
-        <p>&copy; {new Date().getFullYear()} CHEM Website</p>
+        <Footer/>
       </footer>
     </div>
   );
