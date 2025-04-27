@@ -193,28 +193,38 @@ export default function Calendar() {
                 })}
               </div>
             </div>
+{/* Upcoming Events */}
+<div className="bg-white rounded-xl shadow p-4">
+  <div className="flex items-center gap-2 mb-2 text-orange-500 font-medium">
+    <CalendarIcon size={18} />
+    <span>Upcoming</span>
+  </div>
 
-            {/* Upcoming Events */}
-            <div className="bg-white rounded-xl shadow p-4">
-              <div className="flex items-center gap-2 mb-2 text-orange-500 font-medium">
-                <CalendarIcon size={18} />
-                <span>Upcoming</span>
-              </div>
-              {events
-                .sort((a, b) => dayjs(a.date).unix() - dayjs(b.date).unix())
-                .map((e, i) => (
-                  <div
-                    key={i}
-                    className="flex justify-between py-1 text-sm border-b last:border-0 cursor-pointer"
-                    onClick={() => setSelectedEvent(e)}
-                  >
-                    <span className="text-blue-600 font-medium">
-                      {dayjs(e.date).format('D MMM')}
-                    </span>
-                    <span className="text-gray-700 truncate w-32">{e.title}</span>
-                  </div>
-                ))}
-            </div>
+  {events
+    .filter(e => dayjs(e.date).isAfter(today.subtract(1, 'day')))
+    .sort((a, b) => dayjs(a.date).unix() - dayjs(b.date).unix())
+    .map((e, i) => (
+      <div
+        key={i}
+        className="flex justify-between py-1 text-sm border-b last:border-0 cursor-pointer"
+        onClick={() => setSelectedEvent(e)}
+      >
+        <span className="text-blue-600 font-medium">
+          {dayjs(e.date).format('D MMM')}
+        </span>
+        <span className="text-gray-700 truncate w-32">{e.title}</span>
+      </div>
+    ))}
+
+  {/* Show message if no events */}
+  {events.filter(e => dayjs(e.date).isAfter(today.subtract(1, 'day'))).length === 0 && (
+    <div className="text-center text-gray-500 text-sm mt-4">
+      No upcoming events. Stay tuned!
+    </div>
+  )}
+</div>
+
+
           </div>
         </div>
       </div>
