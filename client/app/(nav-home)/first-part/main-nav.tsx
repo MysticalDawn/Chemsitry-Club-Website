@@ -70,7 +70,7 @@ export default function Home() {
               className="btn-2 m-3 text-center bg-white h-16 w-64 text-md font-bold d-inline-block align-items-center position-relative"
               onPress={handleViewCalendarClick}
             >
-              View Events
+              View Calendar
             </Button>
           </div>
         </section>
