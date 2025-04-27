@@ -48,7 +48,7 @@ export default function Calendar() {
     fetchEventData();
   }, []);
 
-  // Build calendar days
+  // Build caledndar days
   const startDay = currentMonth.startOf('week');
   const endDay = currentMonth.endOf('month').endOf('week');
   const calendarDays: dayjs.Dayjs[] = [];
