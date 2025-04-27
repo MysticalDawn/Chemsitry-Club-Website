@@ -1,5 +1,6 @@
 import "@/app/ui/global.css";
 import { Poppins } from "next/font/google";
+import NavbarCustom from "../components/desktop/navbar-custom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import kfupm from "../../public/home/kfupm.jpeg";
 const poppins = Poppins({
@@ -29,7 +30,7 @@ export default function RootLayout({
             marginRight: "1rem",
           }}
         >
-          {children}  
+          {children}
         </div>
       </body>
     </html>

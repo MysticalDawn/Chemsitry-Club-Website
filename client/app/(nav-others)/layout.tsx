@@ -1,10 +1,7 @@
-'use client';
 import "@/app/ui/global.css";
 import { Poppins } from "next/font/google";
 import NavbarCustom from "../components/desktop/navbar-custom";
-import NavbarMobile from "../components/mobile/navbar-mobile";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState } from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,25 +15,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 765);
-    };
-
-    handleResize(); // Check on initial load
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <body>
-        {isMobile ? <NavbarMobile /> : <NavbarCustom />}
+          <NavbarCustom />
         {children}
       </body>
     </html>

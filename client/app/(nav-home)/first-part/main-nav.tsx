@@ -26,12 +26,13 @@ export default function Home() {
     redirect("/resources");
   };
 
-  const handleViewCalendarClick = () => {
-    redirect("/calendar");
-  };
+  const handleViewEventsClick = () => {};
 
   return (
     <>
+      <nav className="w-100 z-10">
+        <NavbarCustom />
+      </nav>
       <main className="main-section">
         <section className="left-section-vector flex justify-start w-75 position-relative z-0">
           <Image
@@ -39,7 +40,7 @@ export default function Home() {
             alt={"path_vector"}
             width={571.49}
             height={403.44}
-            priority
+            loading="lazy"
           />
         </section>
         <section className="middle-section flex-col justify-center align-middle">
@@ -59,18 +60,18 @@ export default function Home() {
             <Button
               radius="full"
               href="resources"
-              className="btn-1 m-3 text-center bg-white h-16 w-64 text-md font-bold d-inline-block align-items-center position-relative"
+              className="btn-1 m-3 text-center bg-white h-16 w-64 text-lg font-bold d-inline-block align-items-center position-relative"
               onPress={handleViewResourcesClick}
             >
               View Resources
             </Button>
             <Button
               radius="full"
-              href="calendar"
-              className="btn-2 m-3 text-center bg-white h-16 w-64 text-md font-bold d-inline-block align-items-center position-relative"
-              onPress={handleViewCalendarClick}
+              href="events"
+              className="btn-2 m-3 text-center bg-white h-16 w-64 text-lg font-bold d-inline-block align-items-center position-relative"
+              onPress={handleViewEventsClick}
             >
-              View Calendar
+              View Events
             </Button>
           </div>
         </section>
@@ -81,7 +82,7 @@ export default function Home() {
             alt={"path_vector"}
             width={271.49}
             height={103.44}
-            priority
+            loading="lazy"
           />
         </section>
       </main>
