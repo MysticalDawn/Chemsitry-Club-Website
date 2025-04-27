@@ -30,6 +30,7 @@ export default function Events() {
         }
         const { data } = await response.json();
         setEvents(data); // Store the fetched events in state
+       
       } catch (error) {
         console.error("Error fetching event data:", error);
       }
