@@ -36,7 +36,7 @@ export default function Events() {
     };
 
     fetchEventData();
-  }, []); // Empty dependency array ensures this runs only once
+  }, []); // Empty dependency rarray ensures this runs only once
 
   // Update the animation and event data when the eventCounter changes
   useEffect(() => {
