@@ -24,7 +24,9 @@ export default function Events() {
   useEffect(() => {
     const fetchEventData = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/get_events`);
+        const response = await fetch(
+          `https://chem-website-server.vercel.app/get_events`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch event data");
         }
