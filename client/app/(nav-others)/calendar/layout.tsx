@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import Image from "next/image"; // Assuming you're using Next.js
 import path_vector_left from "../../../public/calender/left_section_vector.svg";
-
+import Footer from "@/app/components/desktop/footer";
 
 interface CalendarLayoutProps {
   children: ReactNode;
@@ -15,8 +15,6 @@ const CalendarLayout: React.FC<CalendarLayoutProps> = ({ children }) => {
         backgroundColor: "#F9FAFC",
       }}
     >
-   
-
       {/* Main Content Section */}
       <main className="calendar-content flex-col justify-center align-center text-center position-relative z-10">
         <header className="calendar-header mb-6">
@@ -24,25 +22,23 @@ const CalendarLayout: React.FC<CalendarLayoutProps> = ({ children }) => {
             Calendar
           </h1>
         </header>
-           {/* Left Section Vector (Background Styled) */}
-      <section
-        className="left-section-vector absolute z-0"
-        style={{
-          left: "0",
-          width: "60%",
-          height: "100%",
-          backgroundImage: `url(${path_vector_left.src})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
-        }}
-      />
+        {/* Left Section Vector (Background Styled) */}
+        <section
+          className="left-section-vector absolute z-0"
+          style={{
+            left: "0",
+            width: "60%",
+            height: "100%",
+            backgroundImage: `url(${path_vector_left.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+          }}
+        />
         <section className="calendar-body">{children}</section>
-        <footer className="calendar-footer mt-6">
-          <p className="text-sm text-gray-700">&copy; 2023 CHEM-Website</p>
-        </footer>
       </main>
-
-  
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

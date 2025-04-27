@@ -5,7 +5,7 @@ import NavbarCustom from "../components/desktop/navbar-custom";
 import NavbarMobile from "../components/mobile/navbar-mobile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
-
+import Footer from "../components/desktop/footer";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
