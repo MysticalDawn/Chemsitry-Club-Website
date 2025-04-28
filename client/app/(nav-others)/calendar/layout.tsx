@@ -1,13 +1,32 @@
-import React, { ReactNode } from "react";
-import Image from "next/image"; // Assuming you're using Next.js
+"use client";
+import React, { ReactNode, useState, useEffect } from "react";
+import Image from "next/image";
 import path_vector_left from "../../../public/calender/left_section_vector.svg";
 import Footer from "@/app/components/desktop/footer";
+import FooterMobile from "@/app/components/mobile/footer-mobile";
 
 interface CalendarLayoutProps {
   children: ReactNode;
 }
 
 const CalendarLayout: React.FC<CalendarLayoutProps> = ({ children }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 765);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       className="calendar-layout bg-gray-100 position-relative overflow-hidden"
@@ -22,23 +41,24 @@ const CalendarLayout: React.FC<CalendarLayoutProps> = ({ children }) => {
             Calendar
           </h1>
         </header>
-        {/* Left Section Vector (Background Styled) */}
+
+        {/* Left Section Vector (Background Styled)
         <section
           className="left-section-vector absolute z-0"
           style={{
             left: "0",
-            width: "60%",
+            width: isMobile ? "100%" : "60%",
             height: "100%",
             backgroundImage: `url(${path_vector_left.src})`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
+            backgroundSize: isMobile ? "cover" : "contain",
           }}
-        />
+        /> */}
+
         <section className="calendar-body">{children}</section>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+
+      <footer>{isMobile ? <FooterMobile /> : <Footer />}</footer>
     </div>
   );
 };

@@ -31,7 +31,7 @@ export default function Footer() {
             Calendar
           </Link>
           <Link
-            href="/about-us"
+            href="/about_us"
             className="text-white text-base no-underline mx-4"
           >
             About Us
@@ -57,7 +57,7 @@ export default function Footer() {
             A. Alabdulwahab
           </p>
           <p className="text-white font-light text-center mr-2">O. Alfawaz</p>
-          <p className="text-white font-light text-center mr-2">M. Aahmari</p>
+          <p className="text-white font-light text-center mr-2">M. Alahmari</p>
           <p className="text-white font-light text-center mr-2">M. Aljassem</p>
         </div>
         <div className="flex justify-center space-x-4">

@@ -3,6 +3,7 @@
 // Imports
 import React, { useState, useEffect } from "react";
 import Footer from "@/app/components/desktop/footer";
+
 import Image from "next/image";
 import background from "../../../public/resources/background.svg";
 import { CalendarIcon, X } from "lucide-react";

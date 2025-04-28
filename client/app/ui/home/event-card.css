@@ -100,3 +100,59 @@
 .support-text {
   font-family: "Noto Sans Arabic";
 }
+/* Mobile styles for events section */
+@media (max-width: 765px) {
+  .event-container-mobile {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+  
+  .event-card-mobile-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  /* Animation classes */
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-in;
+  }
+  
+  /* Adjust arrow buttons for mobile */
+  .arrow-btns {
+    margin-top: 0.5rem;
+  }
+  
+  .back-arrow-btn, .next-arrow-btn {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+  }
+  
+  /* Typography adjustments for mobile */
+  .event-container-mobile h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  
+  .event-container-mobile .latest-event-text {
+    font-size: 0.875rem;
+  }
+  
+  /* If you need to adjust the EventCard component styling for mobile */
+  .event-container-mobile .event-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
