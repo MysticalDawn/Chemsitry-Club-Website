@@ -3,17 +3,14 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
-    "start": "next start",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "start": "next start"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@heroui/card": "^2.2.15",
     "@heroui/react": "^2.7.5",
     "@nextui-org/button": "^2.2.9",
-    "@opennextjs/cloudflare": "^1.9.0",
+    
     "@tailwindcss/forms": "^0.5.9",
     "@types/ua-parser-js": "^0.7.39",
     "@vercel/postgres": "^0.10.0",
@@ -47,7 +44,6 @@
     "@types/node": "22.10.1",
     "@types/qrcode": "^1.5.5",
     "@types/react": "19.0.0",
-    "@types/react-dom": "19.0.0",
-    "wrangler": "^4.40.3"
+    "@types/react-dom": "19.0.0"
   }
 }
