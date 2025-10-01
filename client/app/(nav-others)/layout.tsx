@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import "@/app/ui/global.css";
 import { Poppins } from "next/font/google";
 import NavbarCustom from "../components/desktop/navbar-custom";
