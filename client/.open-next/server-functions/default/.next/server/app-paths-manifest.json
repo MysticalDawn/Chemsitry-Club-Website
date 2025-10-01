@@ -1,0 +1,7 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(nav-home)/page": "app/(nav-home)/page.js",
+  "/(nav-others)/about_us/page": "app/(nav-others)/about_us/page.js",
+  "/(nav-others)/calendar/page": "app/(nav-others)/calendar/page.js",
+  "/(nav-others)/resources/page": "app/(nav-others)/resources/page.js"
+}
