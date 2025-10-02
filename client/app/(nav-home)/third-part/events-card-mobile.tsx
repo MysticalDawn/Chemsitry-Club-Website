@@ -26,7 +26,7 @@ export default function EventsMobile() {
     const fetchEventData = async () => {
       try {
         const response = await fetch(
-          `https://chem-website-server.vercel.app/get_events`
+          `https://chemistry-club-server.onrender.com/get_events`,
         );
         if (!response.ok) {
           throw new Error("Failed to fetch event data");
